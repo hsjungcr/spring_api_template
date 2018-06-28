@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+    <bean id="myCompany" class="org.jungdev.models.Company">
+        <property name="companyName" value="Amazon.com, Inc."/>
+        <property name="revenueSources">
+            <list>
+                <bean id="mainRevenue" class="org.jungdev.models.Revenue">
+                    <property name="sourceName" value="Retail Product"/>
+                    <property name="souceAmount" value="91.4"/>
+                </bean>
+                <bean id="sideRevenue1" class="org.jungdev.models.Revenue">
+                    <property name="sourceName" value="AWS"/>
+                    <property name="souceAmount" value="12.2"/>
+                </bean>
+                <bean id="sideRevenue2" class="org.jungdev.models.Revenue">
+                    <property name="sourceName" value="Amazon Prime and other Subscription"/>
+                    <property name="souceAmount" value="6.4"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+</beans>

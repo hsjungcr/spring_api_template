@@ -2,15 +2,18 @@ package org.jungdev.controllers;
 
 import org.jungdev.models.Company;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.concurrent.atomic.AtomicLong;
 
 @Controller
 public class RestController {
-    @GetMapping(value = "/company/{companyId}")
-    public @ResponseBody Company getCompanyData(@PathVariable Integer companyId){
-        return new Company();
+    private static final String heading = "Currently Display %s";
+    private final AtomicLong counter = new AtomicLong();
+
+    @RequestMapping(value = "/company")
+    public Company getcurrentCompanyHeading(@RequestParam(value="name", defaultValue="no company") String name){
+        return new Company((int) counter.incrementAndGet(),String.format(heading, name));
     }
 
 }
