@@ -1,23 +1,11 @@
 package org.jungdev.models;
 
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data @NoArgsConstructor
 public class Revenue {
     private String sourceName;
     private String souceAmount;
-
-    public String getSourceName() {
-        return sourceName;
-    }
-
-    public void setSourceName(String sourceName) {
-        this.sourceName = sourceName;
-    }
-
-    public String getSouceAmount() {
-        return souceAmount;
-    }
-
-    public void setSouceAmount(String souceAmount) {
-        this.souceAmount = souceAmount;
-    }
-
 }
